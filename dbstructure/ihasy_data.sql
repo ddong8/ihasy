@@ -2,6 +2,9 @@ TRUNCATE `ihasy`.`plane`;
 TRUNCATE `ihasy`.`node`;
 TRUNCATE `ihasy`.`topic`;
 
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('1', '楼市房产', 'house','1');
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('2', '城市建设', 'city','1');
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('3', '我爱我家', 'home','1');
