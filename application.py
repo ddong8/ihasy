@@ -34,7 +34,7 @@ from jinja2 import Environment, FileSystemLoader
 
 define("port", default = 80, help = "run on the given port", type = int)
 define("mysql_host", default = "localhost", help = "community database host")
-define("mysql_database", default = "f2e", help = "community database name")
+define("mysql_database", default = "ihasy", help = "community database name")
 define("mysql_user", default = "root", help = "community database user")
 define("mysql_password", default = "764895", help = "community database password")
 

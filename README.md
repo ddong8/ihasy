@@ -8,6 +8,8 @@ Fork and send pull request.
 
 ## How to run f2e.im on your own machine
 
+    git clone https://github.com/ddong8/ihasy.git
+
 1. install all required modules:
 
     ```
@@ -17,13 +19,13 @@ Fork and send pull request.
 2. create database and then execute sql file in dbstructure/
 
     ```
-    shell> mysql -u YOURUSERNAME -p
+    shell> mysql -u root -p
 
     mysql> create database ihasy;
     mysql> exit
 
-    shell> mysql -u YOURUSERNAME -p --database=ihasy < dbstructure/ihasy.sql
-    shell> mysql -u YOURUSERNAME -p --database=ihasy < dbstructure/ihasy_data.sql   
+    shell> mysql -u root -p --database=ihasy < dbstructure/ihasy.sql
+    shell> mysql -u root -p --database=ihasy < dbstructure/ihasy_data.sql   
     ```
 
 3. set your mysql user/password and smtp server config in `application.py` and `lib/sendmail.py`.
