@@ -19,10 +19,11 @@ Fork and send pull request.
     ```
     shell> mysql -u YOURUSERNAME -p
 
-    mysql> create database f2e;
+    mysql> create database ihasy;
     mysql> exit
 
-    shell> mysql -u YOURUSERNAME -p --database=f2e < dbstructure/f2e.sql
+    shell> mysql -u YOURUSERNAME -p --database=ihasy < dbstructure/ihasy.sql
+    shell> mysql -u YOURUSERNAME -p --database=ihasy < dbstructure/ihasy_data.sql   
     ```
 
 3. set your mysql user/password and smtp server config in `application.py` and `lib/sendmail.py`.
