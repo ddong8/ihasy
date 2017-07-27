@@ -32,7 +32,7 @@ Fork and send pull request.
 4. check above, using ``python application.py`` to start server.
 
     ```
-    shell> python application.py --port=9001 --mysql_database=f2e --mysql_host=localhost --mysql_password=YOURPASSWORD --mysql_user=YOURUSERNAME
+    shell> python application.py --port=9001 --mysql_database=ihasy --mysql_host=localhost --mysql_password=YOURPASSWORD --mysql_user=YOURUSERNAME
     ```
 
 ## How to set up a production enironment
