@@ -22,12 +22,12 @@ INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('14', '生�
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('15', '法律法规', 'legal','3');
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('16', '创业创客', 'pre-boss','3');
 
-INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('17', '美食', 'car','4');
-INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('18', '影视剧', 'digit','4');
-INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('19', '阅读', 'finance','4');
-INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('20', '旅行', 'life','4');
-INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('21', '运动', 'legal','4');
-INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('22', '二次元', 'pre-boss','4');
+INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('17', '美食', 'food','4');
+INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('18', '影视剧', 'movie','4');
+INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('19', '阅读', 'reading','4');
+INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('20', '旅行', 'travel','4');
+INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('21', '运动', 'spot','4');
+INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('22', '二次元', 'cartoon','4');
 
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('23', '摄影', 'photo','5');
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('24', '音乐', 'music','5');
@@ -35,7 +35,7 @@ INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('25', '设�
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('26', '爱美丽', 'makeup','5');
 
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('27', '你问我答', 'questions','6');
-INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('28', '同城活动', 'citymeeting','6');
+INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('28', '同城活动', 'activities','6');
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('29', '梧桐山', 'shenzhen','6');
 
 INSERT INTO `ihasy`.`node` (`id`, `name`, `slug`,`plane_id`) VALUES ('30', '公告', 'announcement','7');
