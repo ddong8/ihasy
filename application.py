@@ -41,7 +41,7 @@ define("mysql_password", default = "764895", help = "community database password
 class Application(tornado.web.Application):
     def __init__(self):
         settings = dict(
-            blog_title = u"F2E Community",
+            blog_title = u"IHASY Community",
             template_path = os.path.join(os.path.dirname(__file__), "templates"),
             static_path = os.path.join(os.path.dirname(__file__), "static"),
             xsrf_cookies = True,
