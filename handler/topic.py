@@ -654,3 +654,20 @@ class MembersHandler(BaseHandler):
         template_variables["active_page"] = "members"
         self.render("topic/members.html", **template_variables)
 
+class NodesHandler(BaseHandler):
+    def get(self, template_variables = {}):
+        user_info = self.current_user
+        template_variables["user_info"] = user_info
+        if(user_info):
+            template_variables["user_info"]["counter"] = {
+                "topics": self.topic_model.get_user_all_topics_count(user_info["uid"]),
+                "replies": self.reply_model.get_user_all_replies_count(user_info["uid"]),
+                "favorites": self.favorite_model.get_user_favorite_count(user_info["uid"]),
+            }
+
+            template_variables["notifications_count"] = self.notification_model.get_user_unread_notification_count(user_info["uid"]);
+
+        template_variables["planes"] = self.plane_model.get_all_planes_with_nodes()
+        template_variables["active_page"] = "nodes"
+        template_variables["gen_random"] = gen_random
+        self.render("topic/nodes.html", **template_variables)

@@ -59,6 +59,7 @@ class Application(tornado.web.Application):
             (r"/t/edit/(.*)", handler.topic.EditHandler),
             (r"/reply/edit/(.*)", handler.topic.ReplyEditHandler),
             (r"/node/(.*)", handler.topic.NodeTopicsHandler),
+            (r"/nodes", handler.topic.NodesHandler),
             (r"/u/(.*)/topics", handler.topic.UserTopicsHandler),
             (r"/u/(.*)/replies", handler.topic.UserRepliesHandler),
             (r"/u/(.*)/favorites", handler.topic.UserFavoritesHandler),

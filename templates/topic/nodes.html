@@ -1,0 +1,29 @@
+{% extends 'snippet/layout.html' %}
+
+{% block title %}
+    节点 - IHASY
+{% endblock %}
+
+{% block main %}
+    <div class="topics container-box node-topics">
+
+      <div class="nodes-cloud container-box">
+        <h4 class="title">
+            <span class="octicon octicon-globe"></span>
+            常见节点导航
+        </h4>
+        <ul>
+            {% for plane in planes %}
+                <li>
+                    <label for="">{{ plane.name }}</label>
+                    <span class="nodes">
+                        {% for node in plane.nodes %}
+                            <a href="/node/{{ node.slug }}">{{ node.name }}</a>
+                        {% endfor %}
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+{% endblock %}
