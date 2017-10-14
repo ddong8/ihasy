@@ -1,4 +1,4 @@
-Copyright (c) 2013, F2E.im
+Copyright (c) 2017, ihasy.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

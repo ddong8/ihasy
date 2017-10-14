@@ -1,12 +1,12 @@
-## ABOUT F2E.im
+## ABOUT ihasy.com
 
-F2E is a community for front-end-developer.
+ihasy is a community for people in shenzhen.
 
 ## How to contribute
 
 Fork and send pull request.
 
-## How to run f2e.im on your own machine
+## How to run ihasy.com on your own machine
 
     git clone https://github.com/ddong8/ihasy.git
 

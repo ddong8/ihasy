@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 #
-# Copyright 2012 F2E.im
+# Copyright 2017 ihasy.com
 # Do have a faith in what you're doing.
 # Make your life a story worth telling.
 
