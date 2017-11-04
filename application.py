@@ -53,6 +53,7 @@ class Application(tornado.web.Application):
         )
 
         handlers = [
+            (r"/MP_verify_EoFGqovoJdREB8fR.txt",handler.topic.weixin),
             (r"/", handler.topic.IndexHandler),
             (r"/t/(\d+)", handler.topic.ViewHandler),
             (r"/t/create/(.*)", handler.topic.CreateHandler),

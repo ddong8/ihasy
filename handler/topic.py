@@ -52,7 +52,9 @@ class IndexHandler(BaseHandler):
         template_variables["active_page"] = "topic"
         template_variables["gen_random"] = gen_random
         self.render("topic/topics.html", **template_variables)
-
+class weixin(BaseHandler):
+    def get(self,):
+        self.render("topic/MP_verify_EoFGqovoJdREB8fR.txt")
 class NodeTopicsHandler(BaseHandler):
     def get(self, node_slug, template_variables = {}):
         user_info = self.current_user
