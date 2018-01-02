@@ -8,6 +8,7 @@
                     <legend class="">用户信息设置</legend>
                 </div>
                 {{ errors|dump_errors }}
+                <div></div>
                 <div class="control-group">
                     <!-- Avatar -->
                     <label class="control-label" for="username">头像</label>
@@ -15,7 +16,9 @@
                         <img src="/static/avatar/b_{{ user_info.avatar or 'default.png' }}?t={{ gen_random() }}" alt="" class="avatar" />
                         <img src="/static/avatar/m_{{ user_info.avatar or 'default.png' }}?t={{ gen_random() }}" alt="" class="avatar" />
                         <img src="/static/avatar/s_{{ user_info.avatar or 'default.png' }}?t={{ gen_random() }}" alt="" class="avatar" />
-                        <a href="/setting/avatar" class="btn btn-block set-avatar-btn">设置头像</a>
+                        <br/>
+                        <br/>
+                        <a href="/setting/avatar" class="ml10 btn">设置头像</a>
                     </div>
                 </div>
 
