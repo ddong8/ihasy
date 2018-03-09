@@ -1,6 +1,6 @@
 ## ABOUT ihasy.com
 
-ihasy is a community for people in shenzhen.
+ihasy is a community.
 
 ## How to contribute
 
