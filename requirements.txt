@@ -4,6 +4,6 @@ jinja2
 markdown
 pygments
 python-memcached
-mysql-python
+mysqlclient
 wtforms
 Pillow
