@@ -9,8 +9,8 @@ import time
 import re
 import random
 
-from htmlentity import unescape
-from HTMLParser import HTMLParser
+from html.parser import unescape
+from html.parser import HTMLParser
 
 def date(timestamp, formatter):
     return time.strftime(formatter, time.gmtime(float(timestamp)))

@@ -8,15 +8,15 @@
 import uuid
 import hashlib
 from PIL import Image
-import StringIO
+import io
 import time
 import json
 import re
-import urllib2
+import urllib.request
 import tornado.web
 import lib.jsonp
 
-from base import *
+from .base import *
 from lib.variables import *
 
 class AboutHandler(BaseHandler):

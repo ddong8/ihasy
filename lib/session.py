@@ -30,7 +30,7 @@ class Session(SessionData):
         except InvalidSessionException:
             current_session = session_manager.get()
             
-        for key, data in current_session.iteritems():
+        for key, data in current_session.items():
             self[key] = data
         self.session_id = current_session.session_id
         self.hmac_key = current_session.hmac_key
@@ -95,10 +95,19 @@ class SessionManager(object):
         mc.set(session.session_id, session_data, self.session_timeout, 0)
         
     def _generate_id(self):
-        new_id = hashlib.sha256(self.secret + str(uuid.uuid4()))
+        if isinstance(self.secret, str):
+            self.secret = str.encode(self.secret)
+        raw_id = self.secret + str.encode(str(uuid.uuid4()))
+        new_id = hashlib.sha256(raw_id)
         return new_id.hexdigest()
     
     def _generate_hmac(self, session_id):
+        print(type(session_id))
+        print(type(self.secret))
+        if isinstance(session_id,str):
+            session_id = str.encode(session_id)
+        if isinstance(self.secret, str):
+            self.secret = str.encode(self.secret)
         return hmac.new(session_id, self.secret, hashlib.sha256).hexdigest()
 
 class InvalidSessionException(Exception):

@@ -9,11 +9,11 @@
 
 import re
 
-from htmllib import HTMLParser
+from html.parser import HTMLParser
 from cgi import escape
-from urlparse import urlparse
+from urllib.parse import urlparse
 from formatter import AbstractFormatter
-from htmlentitydefs import entitydefs
+from html.entities import entitydefs
 from xml.sax.saxutils import quoteattr
 
 def xssescape(text):

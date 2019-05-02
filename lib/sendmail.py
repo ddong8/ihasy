@@ -34,7 +34,7 @@ def send(sub, content, reciver = get_mail_user + get_mail_postfix):
         stp.sendmail(send_mail_address,to_adress,msg.as_string())
         stp.close()
         return True
-    except Exception,e:
+    except Exception as e:
         print(e)
         return False
 

@@ -8,14 +8,14 @@
 # cat /etc/mime.types
 # application/octet-stream    crx
 
-import sys
-reload(sys)
-sys.setdefaultencoding("utf8")
+# import sys
+# reload(sys)
+# sys.setdefaultencoding("utf8")
 
 import os.path
 import re
 import memcache
-import torndb
+import MySQLdb
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
@@ -33,10 +33,10 @@ from lib.session import Session, SessionManager
 from jinja2 import Environment, FileSystemLoader
 
 define("port", default = 9001, help = "run on the given port", type = int)
-define("mysql_host", default = "localhost", help = "community database host")
+define("mysql_host", default = "120.77.206.139", help = "community database host")
 define("mysql_database", default = "ihasy", help = "community database name")
 define("mysql_user", default = "root", help = "community database user")
-define("mysql_password", default = "764895", help = "community database password")
+define("mysql_password", default = "123456", help = "community database password")
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -89,9 +89,9 @@ class Application(tornado.web.Application):
         tornado.web.Application.__init__(self, handlers, **settings)
 
         # Have one global connection to the blog DB across all handlers
-        self.db = torndb.Connection(
-            host = options.mysql_host, database = options.mysql_database,
-            user = options.mysql_user, password = options.mysql_password
+        self.db = MySQLdb.Connection(
+            host = options.mysql_host, db = options.mysql_database,
+            user = options.mysql_user, passwd = options.mysql_password
         )
 
         # Have one global loader for loading models and handles

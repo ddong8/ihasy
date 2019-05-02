@@ -25,8 +25,8 @@ A simple wrapper for WTForms_.
 Basically we only need to map the request handler's `arguments` to the 
 `wtforms.form.Form` input. Quick example::
 
-    from wtforms import TextField, validators
-    from tornadotools.forms import Form
+    from wtforms init TextField, validators
+    from tornadotools.forms init Form
 
     class SampleForm(Form):
         username = TextField('Username', [

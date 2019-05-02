@@ -6,6 +6,8 @@
 # Make your life a story worth telling.
 
 import re
+import MySQLdb
+from MySQLdb import cursors
 
 do_dict = {
     "where": "__condition",
@@ -144,7 +146,31 @@ class Query(object):
     def query(self, sql):
         self.__close()
         sql = self.__sqlfix(sql)
-        return self.db.query(sql)
+        cursor = cursors.DictCursor(self.db)
+        cursor.execute(sql)
+        return cursor._rows
+
+    def get(self, query):
+        rows = self.query(query)
+        if not rows:
+            return None
+        elif len(rows) > 1:
+            raise Exception("Multiple rows returned for Database.get() query")
+        else:
+            return rows[0]
+
+    def execute(self, query):
+        """Executes the given query, returning the lastrowid from the query."""
+        return self.execute_lastrowid(query)
+
+    def execute_lastrowid(self, query):
+        """Executes the given query, returning the lastrowid from the query."""
+        cursor = self.db.cursor()
+        try:
+            cursor.execute(cursor, query)
+            return cursor.lastrowid
+        except Exception as e:
+            print(e)
 
     def grasp(self, sql):
         select_regx = re.compile("SELECT (COUNT\()?(?P<field>[\w\*\s\.,]+)\)? FROM (?P<table_name>.*?)(LIMIT|ORDER|GROUP|HAVING|WHERE|LEFT|RIGHT|INNER|$)", re.I)
@@ -266,7 +292,7 @@ class Query(object):
         group_having_regx = re.compile("(GROUP|HAVING)", re.I)
 
         if(not group_having_regx.search(sql)):
-            return self.db.get(sql)["COUNT(*)"] if not cheat else sql
+            return self.get(sql).get("COUNT(*)", None) if (not cheat and self.get(sql)) else sql
         else:
             return len(self.db.query(sql)) if not cheat else sql
 
@@ -275,7 +301,7 @@ class Query(object):
         sql = self.__sqlbuild(sql, ["where"])
         sql = self.__sqlfix(sql)
         self.__close()
-        return self.db.get(sql)["SUM(%s)" % field] if not cheat else sql
+        return self.get(sql).get("SUM(%s)" % field, None) if (not cheat and self.get(sql)) else sql
 
     def find(self, cheat = False):
         try:
@@ -288,28 +314,28 @@ class Query(object):
         sql = self.__sqlbuild(sql, ["join", "where", "group", "having", "order", "limit"])
         sql = self.__sqlfix(sql)
         self.__close()
-        return self.db.query(sql) if not cheat else sql
+        return self.query(sql) if not cheat else sql
 
     def delete(self, cheat = False):
         sql = "DELETE FROM %s" % self.__protected["__table_name"]
         sql = self.__sqlbuild(sql, ["where", "order", "limit"])
         sql = self.__sqlfix(sql)
         self.__close()
-        return self.db.execute(sql) if not cheat else sql
+        return self.execute(sql) if not cheat else sql
 
     def save(self, cheat = False):
         sql = "UPDATE %s" % self.__protected["__table_name"]
         sql = self.__sqlbuild(sql, ["data:save", "where"])
         sql = self.__sqlfix(sql)
         self.__close()
-        return self.db.execute(sql) if not cheat else sql
+        return self.execute(sql) if not cheat else sql
 
     def add(self, cheat = False):
         sql = "INSERT INTO %s" % self.__protected["__table_name"]
         sql = self.__sqlbuild(sql, ["data:add"])
         sql = self.__sqlfix(sql)
         self.__close()
-        return self.db.execute(sql) if not cheat else sql
+        return self.execute(sql) if not cheat else sql
 
     def pages(self, current_page = 1, list_rows = 40, cheat = False):
         sql = self.select(cheat = True)
@@ -336,3 +362,7 @@ class Query(object):
         }
 
         return result if not cheat else self.grasp(sql).limit(start, end).select(cheat)
+
+    # Alias some common MySQL exceptions
+    IntegrityError = MySQLdb.IntegrityError
+    OperationalError = MySQLdb.OperationalError

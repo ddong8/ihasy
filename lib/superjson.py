@@ -68,8 +68,8 @@ if __name__ == '__main__':
         )
     )
 
-    print repr(data)
+    print(repr(data))
     jsonstring = dumps(data)
-    print jsonstring
-    print repr(loads(jsonstring))
+    print(jsonstring)
+    print(repr(loads(jsonstring)))
 

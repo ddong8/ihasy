@@ -8,16 +8,16 @@
 import uuid
 import hashlib
 from PIL import Image
-import StringIO
+import io
 import time
 import json
 import re
-import urllib2
+import urllib.request
 import tornado.web
 import lib.jsonp
 import pprint
 
-from base import *
+from .base import *
 from lib.variables import *
 from form.topic import *
 from lib.variables import gen_random

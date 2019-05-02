@@ -8,16 +8,16 @@
 import uuid
 import hashlib
 from PIL import Image
-import StringIO
+import io
 import time
 import json
 import re
-import urllib2
+import urllib.request
 import urllib
 import tornado.web
 import lib.jsonp
 
-from base import *
+from .base import *
 from lib.sendmail import send
 from lib.variables import gen_random
 from lib.gravatar import Gravatar
@@ -112,7 +112,7 @@ class SettingAvatarHandler(BaseHandler):
         user_id = user_info["uid"]
         avatar_name = "%s" % uuid.uuid5(uuid.NAMESPACE_DNS, str(user_id))
         avatar_raw = self.request.files["avatar"][0]["body"]
-        avatar_buffer = StringIO.StringIO(avatar_raw)
+        avatar_buffer = io.StringIO(avatar_raw)
         avatar = Image.open(avatar_buffer)
 
         # crop avatar if it's not square
@@ -321,7 +321,7 @@ class RegisterHandler(BaseHandler):
 
         # continue while validate succeed
 
-        secure_password = hashlib.sha1(form.password.data).hexdigest()
+        secure_password = hashlib.sha1(form.password.data.encode()).hexdigest()
 
         user_info = {
             "email": form.email.data,
