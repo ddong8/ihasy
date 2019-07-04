@@ -1,8 +1,0 @@
-tornado
-jinja2
-markdown
-pygments
-python-memcached
-mysqlclient
-wtforms
-Pillow
