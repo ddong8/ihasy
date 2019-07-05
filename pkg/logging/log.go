@@ -10,7 +10,7 @@ package logging
 
 import (
 	"fmt"
-	"github.com/EDDYCJY/go-gin-example/pkg/file"
+	"ihasy/pkg/file"
 	"log"
 	"os"
 	"path/filepath"

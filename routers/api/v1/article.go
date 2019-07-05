@@ -16,13 +16,13 @@ import (
 	"github.com/boombuler/barcode/qr"
 	"github.com/gin-gonic/gin"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/app"
-	"github.com/EDDYCJY/go-gin-example/pkg/e"
-	"github.com/EDDYCJY/go-gin-example/pkg/qrcode"
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
-	"github.com/EDDYCJY/go-gin-example/pkg/util"
-	"github.com/EDDYCJY/go-gin-example/service/article_service"
-	"github.com/EDDYCJY/go-gin-example/service/tag_service"
+	"ihasy/pkg/app"
+	"ihasy/pkg/e"
+	"ihasy/pkg/qrcode"
+	"ihasy/pkg/setting"
+	"ihasy/pkg/util"
+	"ihasy/service/article_service"
+	"ihasy/service/tag_service"
 )
 
 // @Summary Get a single article

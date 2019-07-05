@@ -17,9 +17,9 @@ import (
 
 	"github.com/golang/freetype"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/file"
-	"github.com/EDDYCJY/go-gin-example/pkg/qrcode"
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
+	"ihasy/pkg/file"
+	"ihasy/pkg/qrcode"
+	"ihasy/pkg/setting"
 )
 
 type ArticlePoster struct {

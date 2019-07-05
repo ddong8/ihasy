@@ -11,7 +11,7 @@ package app
 import (
 	"github.com/astaxie/beego/validation"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
+	"ihasy/pkg/logging"
 )
 
 // MarkErrors logs error logs

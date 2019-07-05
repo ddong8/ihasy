@@ -8,7 +8,7 @@ Make your life a story worth telling.
 
 package auth_service
 
-import "github.com/EDDYCJY/go-gin-example/models"
+import "ihasy/models"
 
 type Auth struct {
 	Username string

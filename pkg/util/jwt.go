@@ -10,6 +10,8 @@ package util
 
 import (
 	"time"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 var jwtSecret []byte

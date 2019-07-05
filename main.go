@@ -15,12 +15,12 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/EDDYCJY/go-gin-example/models"
-	"github.com/EDDYCJY/go-gin-example/pkg/gredis"
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
-	"github.com/EDDYCJY/go-gin-example/pkg/util"
-	"github.com/EDDYCJY/go-gin-example/routers"
+	"ihasy/models"
+	"ihasy/pkg/gredis"
+	"ihasy/pkg/logging"
+	"ihasy/pkg/setting"
+	"ihasy/pkg/util"
+	"ihasy/routers"
 )
 
 func init() {

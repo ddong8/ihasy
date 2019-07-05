@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/e"
+	"ihasy/pkg/e"
 )
 
 type Tag struct {

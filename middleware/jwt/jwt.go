@@ -9,12 +9,13 @@ Make your life a story worth telling.
 package jwt
 
 import (
+	"github.com/dgrijalva/jwt-go"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/e"
-	"github.com/EDDYCJY/go-gin-example/pkg/util"
+	"ihasy/pkg/e"
+	"ihasy/pkg/util"
 )
 
 // JWT is jwt middleware

@@ -8,7 +8,7 @@ Make your life a story worth telling.
 
 package export
 
-import "github.com/EDDYCJY/go-gin-example/pkg/setting"
+import "ihasy/pkg/setting"
 
 const EXT = ".xlsx"
 
