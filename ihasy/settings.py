@@ -29,12 +29,14 @@ ALLOWED_HOSTS = ['*', ]
 # Application definition
 
 INSTALLED_APPS = [
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -112,5 +114,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'collectedstatic')
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATICFILES = os.path.join(BASE_DIR, 'static')
+
+FILE_URL = "static/%Y/%m/%d/files/"
+FILE_ROOT = os.path.join(BASE_DIR, FILE_URL)
+
+SIMPLEUI_ANALYSIS = False
+SIMPLEUI_HOME_INFO = False

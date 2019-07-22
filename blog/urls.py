@@ -7,6 +7,7 @@
 # Make your life a story worth telling.
 
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
