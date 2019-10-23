@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
+from django.views import static
 from rest_framework import routers
 
 from forum import views
+from ihasy import settings
 
 router = routers.DefaultRouter()
 router.register(r'favorite', views.FavoriteViewSet)
