@@ -43,7 +43,7 @@ export default {
     '@nuxtjs/axios'
   ],
   axios: {
-    baseURL: 'http://127.0.0.1:8000', //设置统一的基础url,线上环境关闭代理使用它
+    // baseURL: 'http://127.0.0.1:8000', //设置统一的基础url,线上环境关闭代理使用它
     proxy: true, // 表示开启代理
     prefix: '/api', // 表示给请求url加个前缀 /api
     credentials: true // 表示跨域请求时是否需要使用凭证
